@@ -15,6 +15,10 @@ document.getElementById('down').addEventListener('click', () => { if (dy === 0) 
 document.getElementById('left').addEventListener('click', () => { if (dx === 0) { dx = -gridSize; dy = 0; } });
 document.getElementById('right').addEventListener('click', () => { if (dx === 0) { dx = gridSize; dy = 0; } });
 
+// Variables para el control táctil
+let touchStartX = 0;
+let touchStartY = 0;
+
 function startGame() {
     startButton.style.display = 'none';
     resetButton.style.display = 'none';
@@ -135,3 +139,53 @@ function updateScore() {
     }
     document.getElementById('highscore').textContent = `Highscore: ${highscore}`;
 }
+
+// Funciones para el control táctil
+function handleTouchStart(event) {
+    if (event.touches.length === 1) {
+        const touch = event.touches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+    }
+}
+
+function handleTouchEnd(event) {
+    if (event.changedTouches.length === 1) {
+        const touch = event.changedTouches[0];
+        const touchEndX = touch.clientX;
+        const touchEndY = touch.clientY;
+
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Deslizar horizontalmente
+            if (deltaX > 0) {
+                // Deslizar a la derecha
+                if (dx === 0) { dx = gridSize; dy = 0; }
+            } else {
+                // Deslizar a la izquierda
+                if (dx === 0) { dx = -gridSize; dy = 0; }
+            }
+        } else {
+            // Deslizar verticalmente
+            if (deltaY > 0) {
+                // Deslizar hacia abajo
+                if (dy === 0) { dx = 0; dy = gridSize; }
+            } else {
+                // Deslizar hacia arriba
+                if (dy === 0) { dx = 0; dy = -gridSize; }
+            }
+        }
+    }
+}
+
+function resetGame() {
+    startGame();
+}
+
+startButton.addEventListener('click', startGame);
+resetButton.addEventListener('click', resetGame);
+document.addEventListener('keydown', handleKeyPress);
+document.addEventListener('touchstart', handleTouchStart);
+document.addEventListener('touchend', handleTouchEnd);
