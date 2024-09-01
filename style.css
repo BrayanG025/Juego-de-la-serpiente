@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #A683EA;
+    color: white;
+    margin: 0;
+}
+
+#gameCanvas {
+    background-color: #e5f3b1;
+    display: block;
+    margin: 0 auto;
+    border: 8px solid #22221D;
+    border-radius: 6%;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.scoreboard span {
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #21a1f1;
+    cursor: default;
+    display: inline-block;
+    user-select: none;
+}
+
+#score, #highscore {
+        color: #282c34;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #555659;
+    color: #D3CFE0;
+    cursor: pointer;
+}
+
+.iniciar_juego {
+    border: 4px solid #534778;
+    border-radius: 24px;
+}
+
+.reiniciar_juego {
+    border: 4px solid #534778;
+    border-radius: 24px;
+}
+
+button:hover {
+    background-color: #434446;
+}
+
+.pie_de_pagina {
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    opacity: 50%;
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+    margin-top: auto;
+}
+
+.pie_de_pagina .creador {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.pie_de_pagina .links {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.pie_de_pagina .links:hover {
+    opacity: 0.8;
+}
+
+/* Responsividad para tablets y móviles */
+@media (max-width: 1024px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .scoreboard {
+        font-size: 20px; /* Ajuste del tamaño de la fuente para pantallas más pequeñas */
+        margin-bottom: 10px; /* Menor espacio debajo del marcador */
+    }
+}
+
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .scoreboard {
+        font-size: 18px; /* Ajuste adicional para pantallas móviles */
+        padding: 8px 16px; /* Menor padding */
+        border-radius: 10px; /* Bordes redondeados más pequeños */
+    }
+}
+
+@media (max-width: 480px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .scoreboard {
+        font-size: 16px; /* Ajuste para pantallas más pequeñas */
+        padding: 6px 12px; /* Menor padding */
+        border-radius: 8px; /* Bordes redondeados más pequeños */
+    }
+}
