@@ -14,7 +14,7 @@ El juego incluye una interfaz moderna, un marcador actualizado, y es responsivo 
 
 - **Juego Clásico**: Controla la culebrita para comer la comida y aumentar tu puntaje.
 - **Marcador**: Muestra el puntaje actual y el mejor puntaje alcanzado.
-- **Interfaz Modernizada**: Estilo atractivo con gráficos mejorados.
+- **Interfaz Modernizada**: Estilo atractivo con gráficos mejorados, con soporte para dispositivos tactiles.
 - **Responsividad**: Diseño adaptable para dispositivos móviles.
 - **Reinicio del Juego**: Opción para reiniciar el juego solo después de perder.
 
